@@ -1,0 +1,42 @@
+{
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src/*",
+      "routes/*",
+      "server.js"
+    ],
+    "ignore": [
+      "test/*",
+      "docs/*",
+      ".git/*",
+      "node_modules/*",
+      "dist/*",
+      "build/*",
+      "public/*"
+    ],
+    "delay": 2500
+  },
+  "name": "ra-router-crud-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/O-R-C/ra-lifecycle-http-chat-server.git"
+  },
+  "author": "Andrey Semenov",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "uuid": "^10.0.0"
+  }
+}
