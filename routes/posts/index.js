@@ -18,6 +18,13 @@ router.post('/', async (req, res) => {
   res.status(204).end()
 })
 
+router.put('/:id', async (req, res) => {
+  const id = req.params.id
+  const content = req.body
+  posts.updatePost(id, content)
+  res.status(204).end()
+})
+
 router.delete('/:id', async (req, res) => {
   const id = req.params.id
   posts.deletePost(id)

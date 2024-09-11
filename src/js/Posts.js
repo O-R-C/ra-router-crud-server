@@ -21,6 +21,10 @@ class Posts {
     return this.posts.find((post) => post.id === id)
   }
 
+  updatePost(id, content) {
+    this.posts = this.posts.map((post) => (post.id === id ? { ...post, content } : post))
+  }
+
   deletePost(id) {
     this.posts = this.posts.filter((post) => post.id !== id)
   }
