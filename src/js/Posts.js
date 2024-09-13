@@ -2,11 +2,11 @@ const { v4: uuidv4 } = require('uuid')
 
 class Posts {
   constructor(posts = []) {
-    this.posts = posts.map((post) => this.getPostWithId(post))
+    this.posts = posts.map((post) => this.getPostWithProps(post))
   }
 
-  getPostWithId(post) {
-    return { ...post, id: uuidv4() }
+  getPostWithProps(post) {
+    return { ...post, id: uuidv4(), author: 'Post author', createdAt: new Date() }
   }
 
   getPosts() {
@@ -14,7 +14,7 @@ class Posts {
   }
 
   addPost(post) {
-    this.posts.push(this.getPostWithId(post))
+    this.posts.push(this.getPostWithProps(post))
   }
 
   getPost(id) {
@@ -22,7 +22,8 @@ class Posts {
   }
 
   updatePost(id, content) {
-    this.posts = this.posts.map((post) => (post.id === id ? { ...post, content } : post))
+    console.log('🚀 ~ id, content:', id, content)
+    this.posts = this.posts.map((post) => (post.id === id ? { ...post, ...content } : post))
   }
 
   deletePost(id) {
